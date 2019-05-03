@@ -37,9 +37,9 @@ function bird() {
         }
     }
 
-    this.collide = function(other) {
-        if ((this.x + this.r / 2 > other.x) && (this.x - this.r / 2 < other.x + other.w)) {
-            if ((this.y + this.r / 2 > other.y2) || (this.y - this.r / 2 < other.y1)) {
+    this.collide = function(o) {
+        if ((this.x + this.r / 2 > o.x) && (this.x - this.r / 2 < o.x + o.w)) {
+            if ((this.y + this.r / 2 > o.y2) || (this.y - this.r / 2 < o.y1)) {
                 return true;
             } else {
                 return false;
