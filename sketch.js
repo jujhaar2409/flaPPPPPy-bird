@@ -11,7 +11,7 @@ function centerCanvas() {
 }
 
 function setup() {
-	myHeight = displayHeight * 0.65;
+	myHeight = displayHeight * 0.68;
 	myWidth = displayWidth * 0.95;
 	noStroke();
 	cnv = createCanvas(myWidth, myHeight);
