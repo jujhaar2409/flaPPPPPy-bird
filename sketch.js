@@ -1,77 +1,93 @@
 var base = [];
-var b;
-var p = [];
+var theBird;
+var thePipes = [];
+var myWidth;
+var myHeight;
+
+function centerCanvas() {
+	var x = (windowWidth - width) / 2;
+	var y = (windowHeight - height) / 2;
+	cnv.position(x, y);
+}
 
 function setup() {
-    noStroke();
-    createCanvas(400, 600);
-    b = new bird();
-    s = new score();
-    base.push(new Base(0));
-    base.push(new Base(width));
+	myHeight = displayHeight * 0.65;
+	myWidth = displayWidth * 0.95;
+	noStroke();
+	cnv = createCanvas(myWidth, myHeight);
+	centerCanvas();
+	theBird = new bird();
+	s = new score();
+	base.push(new Base(0));
+	base.push(new Base(width));
 }
 
 function draw() {
-    image(b.backgroundimg, 0, 0, width, height);
-    //image(b.baseimg, 0, 6 * height / 8, width, height / 4);
+	image(theBird.backgroundimg, 0, 0, width, height);
+	//image(b.baseimg, 0, 6 * height / 8, width, height / 4);
 
-    if (frameCount % 70 == 0) {
-        if (b.a != 0) {
-            p.push(new pipe());
-        }
-    }
+	if (frameCount % 70 == 0) {
+		if (theBird.a != 0) {
+			thePipes.push(new pipe());
+		}
+	}
 
-    for (var i = 0; i < p.length; i++) {
-        //check whether out of frame
+	for (var i = 0; i < thePipes.length; i++) {
+		//check whether out of frame
 
-        if (p[i].outOfFrame()) {
-            p.shift();
-            s.increase()
-        }
+		if (thePipes[i].outOfFrame()) {
+			thePipes.shift();
+			s.increase();
+		}
 
-        p[i].update();
-        p[i].show();
-        //check collision
+		thePipes[i].update();
+		thePipes[i].show();
+		//check collision
 
-        if (b.collide(p[i]) || b.y >= 6 * height / 8) {
-            noLoop();
-        }
-    }
+		if (theBird.collide(thePipes[i]) || theBird.y >= (6 * height) / 8) {
+			noLoop();
+		}
+	}
 
-    for (var j = 0; j < base.length; j++) {
-        if (base[j].outOfFrame()) {
-            base.push(new Base(width * 0.98))
-            base.shift()
-        }
+	for (var j = 0; j < base.length; j++) {
+		if (base[j].outOfFrame()) {
+			base.push(new Base(width * 0.98));
+			base.shift();
+		}
 
-        base[j].update();
-        base[j].show();
-    }
+		base[j].update();
+		base[j].show();
+	}
 
-    b.update();
-    b.show();
+	theBird.update();
+	theBird.show();
 
-    s.show();
+	s.show();
 }
 
 function keyPressed() {
-    if (key == " ") {
-        if (b.a == 0) {
-            b.a = 0.7;
-            b.v = 10;
-            b.up();
-        } else {
-            b.up();
-        }
-    } else if (key == "z") {
-        noStroke();
-        createCanvas(400, 600);
-        b = new bird();
-        s = new score();
-        p = [];
-        base = []
-        base.push(new Base(0));
-        base.push(new Base(width));
-        loop();
-    }
+	if (key == " ") {
+		if (theBird.a == 0) {
+			theBird.a = 0.7;
+			theBird.v = 10;
+			theBird.up();
+		} else {
+			theBird.up();
+		}
+	} else if (key == "z") {
+		noStroke();
+		createCanvas(myWidth, myHeight);
+		theBird = new bird();
+		s = new score();
+		thePipes = [];
+		base = [];
+		base.push(new Base(0));
+		base.push(new Base(width));
+		loop();
+	}
+}
+
+function windowResized() {
+	resizeCanvas(myWidth, myHeight);
+	centerCanvas();
 }

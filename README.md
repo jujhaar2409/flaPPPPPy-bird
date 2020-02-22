@@ -1,2 +1,5 @@
-# flappybird1
-p5js clone of flappy bird
+# Flappybird Game
+
+## About
+Basic version of the famous flappy bird game. Written in javascript using the p5.js library.
+
