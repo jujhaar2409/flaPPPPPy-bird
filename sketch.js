@@ -4,18 +4,19 @@ var thePipes = [];
 var myWidth;
 var myHeight;
 
-function centerCanvas() {
-	var x = (windowWidth - width) / 2;
-	var y = (windowHeight - height) / 2;
-	cnv.position(x, y);
-}
+// function centerCanvas() {
+// 	var x = (windowWidth - width) / 2;
+// 	var y = (windowHeight - height) / 2;
+// 	cnv.position(x, y);
+// }
 
 function setup() {
 	myHeight = displayHeight * 0.68;
 	myWidth = displayWidth * 0.95;
 	noStroke();
 	cnv = createCanvas(myWidth, myHeight);
-	centerCanvas();
+	// centerCanvas();
+	cnv.parent("sketch-holder");
 	theBird = new bird();
 	s = new score();
 	base.push(new Base(0));
@@ -76,7 +77,9 @@ function keyPressed() {
 		}
 	} else if (key == "z") {
 		noStroke();
-		createCanvas(myWidth, myHeight);
+		cnv = createCanvas(myWidth, myHeight);
+		cnv.parent("sketch-holder");
+		// centerCanvas();
 		theBird = new bird();
 		s = new score();
 		thePipes = [];
@@ -87,7 +90,7 @@ function keyPressed() {
 	}
 }
 
-function windowResized() {
-	resizeCanvas(myWidth, myHeight);
-	centerCanvas();
-}
+// function windowResized() {
+// 	resizeCanvas(myWidth, myHeight);
+// 	centerCanvas();
+// }
