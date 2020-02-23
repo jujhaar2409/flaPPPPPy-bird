@@ -1,5 +1,3 @@
-# Flappybird Game
+#flaPPPPPy-bird
 
-## About
-Basic version of the famous flappy bird game. Written in javascript using the p5.js library.
-
+Clone of the legendary game flappy bird created with the help of the p5.js library(notice the five P's in the name)
