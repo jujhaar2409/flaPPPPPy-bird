@@ -10,6 +10,26 @@ var myHeight;
 // 	cnv.position(x, y);
 // }
 
+formColor = document.getElementById("color-form");
+formColor.addEventListener("click", color);
+
+var colorOfBird = "";
+function color(event) {
+	colorOfBird = event.target.value;
+	// console.log(event.target);
+	noStroke();
+	cnv = createCanvas(myWidth, myHeight);
+	cnv.parent("sketch-holder");
+	// centerCanvas();
+	theBird = new bird(colorOfBird);
+	s = new score();
+	thePipes = [];
+	base = [];
+	base.push(new Base(0));
+	base.push(new Base(width));
+	loop();
+}
+
 function setup() {
 	myHeight = displayHeight * 0.68;
 	myWidth = displayWidth * 0.95;
@@ -17,7 +37,7 @@ function setup() {
 	cnv = createCanvas(myWidth, myHeight);
 	// centerCanvas();
 	cnv.parent("sketch-holder");
-	theBird = new bird();
+	theBird = new bird(colorOfBird);
 	s = new score();
 	base.push(new Base(0));
 	base.push(new Base(width));
@@ -80,7 +100,7 @@ function keyPressed() {
 		cnv = createCanvas(myWidth, myHeight);
 		cnv.parent("sketch-holder");
 		// centerCanvas();
-		theBird = new bird();
+		theBird = new bird(colorOfBird);
 		s = new score();
 		thePipes = [];
 		base = [];
