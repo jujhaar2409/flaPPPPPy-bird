@@ -1,40 +1,39 @@
 <!DOCTYPE html>
 <html lang="">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Flappy Bird</title>
-	</head>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flappy Bird</title>
+  </head>
 
-	<body>
-		<h1>
-			FLAPPY BIRD
-		</h1>
-	</body>
-	<div id="sketch-holder">
-		<!-- Our sketch will go here! -->
-	</div>
-	<div id="lower-text">
-		<h2>
-			press spacebar to jump; press z to try again; choose bird color
-			below
-		</h2>
-		<form id="color-form">
-			<input type="radio" id="red" name="color" value="red" />
-			<label for="red" style="color:red;">red</label>
-			<input type="radio" id="blue" name="color" value="blue" />
-			<label for="blue" style="color:blue;">blue</label>
-			<input type="radio" id="yellow" name="color" value="yellow" />
-			<label for="yellow" style="color:yellow;">yellow</label>
-		</form>
-	</div>
-	<script src="libraries/p5.js"></script>
-	<script src="libraries/p5.dom.js"></script>
-	<script src="libraries/p5.sound.js"></script>
-	<script src="sketch.js"></script>
-	<script src="bird.js"></script>
-	<script src="pipe.js"></script>
-	<script src="score.js"></script>
-	<script src="base.js"></script>
-	<link rel="stylesheet" type="text/css" href="style.css" />
+  <body>
+    <h1>
+      FLAPPY BIRD
+    </h1>
+  </body>
+  <div id="sketch-holder">
+    <!-- Our sketch will go here! -->
+  </div>
+  <div id="lower-text">
+    <h2>
+      press spacebar to jump; press z to try again; choose bird color below
+    </h2>
+    <form id="color-form">
+      <input type="radio" id="red" name="color" value="red" />
+      <label for="red">red</label>
+      <input type="radio" id="blue" name="color" value="blue" />
+      <label for="blue">blue</label>
+      <input type="radio" id="yellow" name="color" value="yellow" />
+      <label for="yellow">yellow</label>
+    </form>
+  </div>
+  <script src="libraries/p5.js"></script>
+  <script src="libraries/p5.dom.js"></script>
+  <script src="libraries/p5.sound.js"></script>
+  <script src="sketch.js"></script>
+  <script src="bird.js"></script>
+  <script src="pipe.js"></script>
+  <script src="score.js"></script>
+  <script src="base.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css" />
 </html>
