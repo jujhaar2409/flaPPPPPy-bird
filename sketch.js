@@ -108,7 +108,7 @@ function draw() {
 }
 
 function keyPressed() {
-  if (key == ' ') {
+  if (key == 'j') {
     if (theBird.a == 0) {
       theBird.a = 0.7;
       theBird.v = 10;
@@ -116,11 +116,10 @@ function keyPressed() {
     } else {
       theBird.up();
     }
-  } else if (key == 'z') {
+  } else if (key == 'r') {
     noStroke();
     cnv = createCanvas(myWidth, myHeight);
     cnv.parent('sketch-holder');
-    // centerCanvas();
     theBird = new bird(colorOfBird);
     s = new score();
     thePipes = [];
