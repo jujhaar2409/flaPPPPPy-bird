@@ -1,5 +1,5 @@
 function bird(color) {
-  this.x = 50;
+  this.x = 75;
   this.y = height / 3;
   this.v = 0;
   this.a = 0;
@@ -32,7 +32,7 @@ function bird(color) {
   };
 
   this.mobileUp = function () {
-    this.v -= 38 * 0.7;
+    this.v -= 36 * 0.7;
   };
 
   this.pass = function (other) {
